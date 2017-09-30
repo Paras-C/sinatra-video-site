@@ -1,9 +1,9 @@
 
-  <h2><%= @posts.title %></h2>
+  <h2><%= @videos.title %></h2>
   <hr>
-  <iframe width="560" height="315" src ="<%=video.url %>" frameborder="0" allowfullscreen></iframe>
+  <iframe width="560" height="315" src ="<%=@videos.url %>" frameborder="0" allowfullscreen></iframe>
   <p>Description:</p>
-  <p><%= video.description %></p>
+  <p><%= @videos.description %></p>
   <br>
   <br>
-  <a href="http://localhost:9292/posts">Home</a>
+  <a href="http://localhost:9292/videos">Home</a>

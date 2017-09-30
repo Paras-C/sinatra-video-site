@@ -45,7 +45,13 @@ class PostsController < Sinatra::Base
 
   #UPDATE
   put "/videos/:id" do
-
+    id = params[:id].to_i
+    new_video = Video.find(id)
+    new_video.title = params[:title]
+    new_video.description = params[:description]
+    new_video.url = params[:url]
+    new_video.save
+    redirect "videos/#{new_video.id}"
   end
 
   #DELETE
