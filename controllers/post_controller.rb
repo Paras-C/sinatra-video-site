@@ -16,7 +16,7 @@ class PostsController < Sinatra::Base
 
   #NEW
   get "/videos/new" do
-
+    erb :"posts/new"
   end
 
   #SHOW
