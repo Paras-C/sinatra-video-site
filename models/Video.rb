@@ -60,7 +60,8 @@ class Video
 
     video.id = video_data['id']
     video.title = video_data['title']
-    video.body = video_data['body']
+    video.description = video_data['description']
+    video.url = video_data['url']
 
     video
 

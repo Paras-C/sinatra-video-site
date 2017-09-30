@@ -10,7 +10,8 @@ class PostsController < Sinatra::Base
 
   #INDEX
   get "/videos" do
-
+    @videos = Video.all
+    erb :"posts/index"
   end
 
   #NEW

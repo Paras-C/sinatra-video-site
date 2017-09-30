@@ -1,0 +1,17 @@
+<h1>Welcome to ShoeTube</h1>
+<h2>For all of your shoe video needs</h2>
+<hr>
+<br>
+<% @videos.each do |video| %>
+  <h3><%= video.title %></h3>
+  <hr>
+  <iframe width="560" height="315" src ="<%=video.url %>" frameborder="0" allowfullscreen></iframe>
+  <p>Description:</p>
+  <p><%= video.description %></p>
+  <a href="/videos/<%= video.id %>">View</a>
+  <a href="/videos/<%= video.id %>/edit">Edit</a>
+
+  <br>
+  <br>
+
+  <% end %>
