@@ -21,12 +21,19 @@ class PostsController < Sinatra::Base
 
   #SHOW
   get "/videos/:id" do
-
+    id = params[:id].to_i
+    @videos = Video.find(id)
+    erb :"posts/show"
   end
 
   #CREATE
   post "/videos" do
-
+    new_video = Video.new
+    new_video.title = params[:title]
+    new_video.description = params[:description]
+    new_video.url = params[:url]
+    new_video.save
+    redirect "/videos"
   end
 
   #EDIT
