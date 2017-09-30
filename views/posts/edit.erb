@@ -1,0 +1,19 @@
+<h1>Edit Form</h1>
+
+<form action="/videos/<%= @id %>" method="POST">
+
+  <label for="title">Title: </label>
+  <input type="text" name="title" value="<%= @videos.title %>">
+  <br>
+  <br>
+  <label for="url">URL: </label>
+  <input type="text" name="url" value="<%= @videos.url %>"> 
+  <br>
+  <br>
+  <label for="description">Description: </label>
+  <textarea name="description"><%= @videos.description %></textarea>
+
+  <input type="hidden" name="_method" value="PUT">
+  <br>
+  <input type="submit" value="Update">
+</form>

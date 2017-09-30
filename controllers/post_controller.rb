@@ -38,7 +38,9 @@ class PostsController < Sinatra::Base
 
   #EDIT
   get "/videos/:id/edit" do
-
+    @id = params[:id].to_i
+    @videos = Video.find(@id)
+    erb :"posts/edit"
   end
 
   #UPDATE
