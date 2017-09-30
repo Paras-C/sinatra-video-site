@@ -56,7 +56,9 @@ class PostsController < Sinatra::Base
 
   #DELETE
   delete "/videos/:id" do
-
+    id = params[:id].to_i
+    Video.destroy(id)
+    redirect "/videos"
   end
 
 
