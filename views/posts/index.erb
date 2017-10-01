@@ -1,10 +1,9 @@
-<h1>Welcome to ShoeTube</h1>
-<h2>For all of your shoe video needs</h2>
+<h2 class="title">For all of your shoe video needs</h2>
 <hr>
 <br>
 <a href="/videos/new">Upload New Video</a>
 <% @videos.each do |video| %>
-  <h3><%= video.title %></h3>
+  <h2 class="videotitle"><%= video.title %></h2>
   <hr>
   <iframe width="560" height="315" src ="<%=video.url %>" frameborder="0" allowfullscreen></iframe>
   <p>Description:</p>
