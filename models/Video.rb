@@ -1,6 +1,6 @@
 class Video
 
-  attr_accessor :id, :title, :description, :url
+  attr_accessor :id, :title, :description, :url, :genre
 
   def self.open_connection
     PGconn.connect( dbname: "video_list")
@@ -37,9 +37,9 @@ class Video
     conn = Video.open_connection
 
     if(!self.id)
-      sql = "INSERT INTO video (title, description, url) VALUES ('#{self.title}', '#{self.description}', '#{self.url}')"
+      sql = "INSERT INTO video (title, description, url, genre) VALUES ('#{self.title}', '#{self.description}', '#{self.url}', '#{self.genre}')"
     else
-      sql = "UPDATE video SET title = '#{self.title}', description = '#{self.description}', url = '#{self.url}' WHERE id = #{self.id}"
+      sql = "UPDATE video SET title = '#{self.title}', description = '#{self.description}', url = '#{self.url}', genre = '#{self.genre}' WHERE id = #{self.id}"
     end
 
     conn.exec(sql)
@@ -62,6 +62,7 @@ class Video
     video.title = video_data['title']
     video.description = video_data['description']
     video.url = video_data['url']
+    video.genre = video_data['genre']
 
     video
 

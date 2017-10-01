@@ -32,6 +32,7 @@ class PostsController < Sinatra::Base
     new_video.title = params[:title]
     new_video.description = params[:description]
     new_video.url = params[:url]
+    new_video.genre = params[:genre]
     new_video.save
     redirect "/videos"
   end
@@ -50,6 +51,7 @@ class PostsController < Sinatra::Base
     new_video.title = params[:title]
     new_video.description = params[:description]
     new_video.url = params[:url]
+    new_video.genre = params[:genre]
     new_video.save
     redirect "videos/#{new_video.id}"
   end
